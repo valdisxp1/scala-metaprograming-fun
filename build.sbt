@@ -1,5 +1,5 @@
 scalaVersion := "2.11.1"
 
-lazy val root = project.in( file(".") ).dependsOn(macro)
+lazy val root = project.in( file(".") ).dependsOn(macros)
 
-lazy val macro = project
+lazy val macros = project
