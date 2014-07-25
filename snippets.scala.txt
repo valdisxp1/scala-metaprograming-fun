@@ -1,1 +1,8 @@
-ru.reify{val map=Map.newBuilder[String,String];map+=(("x","y"));map.result}
+import scala.reflect.runtime.universe._
+reify{val map=Map.newBuilder[String,String];map+=(("x","y"));map.result}
+
+Expr[Map[String,String]](Block(
+List(reify(val map=Map.newBuilder[String,String]),
+reify(map+=(("x","y")))
+),reify(map.result)))
+

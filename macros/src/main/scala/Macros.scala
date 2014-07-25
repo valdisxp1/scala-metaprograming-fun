@@ -19,6 +19,7 @@ def loadProperties(file:String):Map[String,String] = macro loadPropertiesImpl
 def loadPropertiesImpl(c:Context)(file:c.Expr[String])={
   import c.universe._
   import scala.collection.JavaConverters._
+  import scala.collection.mutable
   val Literal(Constant(fileName: String)) = file.tree
   val fis = new FileInputStream(fileName)
   val properties = new Properties
@@ -26,14 +27,14 @@ def loadPropertiesImpl(c:Context)(file:c.Expr[String])={
   fis.close
   
   val map = properties.asScala
+  
+  val pairs = map.map{case(k,v)=>reify((k,v))}
 
+  val mapVariable= newTermName("map")
   
+  val typeTag = typeOf[mutable.Builder[(String,String),Map[String,String]]]
+  val define = ValDef(Modifiers(), mapVariable,TypeTree(typeTag) , reify(Map.newBuilder[String,String]).tree)
   
-  val adds = map.map{case(k,v)=>(Literal(Constant(k)),Literal(Constant(v)))}
-				
-  
-  //c.Expr[Map[String,String]](Block())
-  //reify(Map.empty[String,String])
-  reify{val map=Map.newBuilder[String,String];map+=(("x","y"));map.result}
+  reify(Map.empty[String,String])
 }
 }
