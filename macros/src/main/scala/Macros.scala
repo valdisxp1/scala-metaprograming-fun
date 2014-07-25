@@ -15,8 +15,8 @@ def loadFileImpl(c:Context)(file:c.Expr[String])={
   Literal(Constant(contents))
 }
 
-def loadProperties(file:String):Map[String,String] = macro loadPropertiesImpl
-def loadPropertiesImpl(c:Context)(file:c.Expr[String])={
+def loadProperties(file: String): Map[String,String] = macro loadPropertiesImpl
+def loadPropertiesImpl(c: Context)(file: c.Expr[String])={
   import c.universe._
   import scala.collection.JavaConverters._
   import scala.collection.mutable
@@ -29,19 +29,20 @@ def loadPropertiesImpl(c:Context)(file:c.Expr[String])={
   val map = properties.asScala
   
   val pairs = map.map{case(k,v)=>reify((k,v))}
-
-  reify(println(Ident(mapVariable).splice))
   
-  val mapVariable= newTermName("map")
-  val mapVariableAsExpr =Expr[mutable.Builder[(String,String),Map[String,String]]](Ident(mapVariable))
+  def mapVariable= newTermName("map")
   
   val typeTag = typeOf[mutable.Builder[(String,String),Map[String,String]]]
   val define = ValDef(Modifiers(), mapVariable,TypeTree(typeTag) , reify(Map.newBuilder[String,String]).tree)
   
+  val result = Apply(Select(Ident(mapVariable), newTermName("result")), List())
   
+  val add = Apply(Select(Ident(mapVariable), newTermName("$plus$eq")), List(reify{("x","y")}.tree))
   
-  val result = reify()
-  
-  reify(Map.empty[String,String])
+  c.Expr[Map[String,String]](Block(
+  List(define,
+  add), 
+  result
+  ))
 }
 }
