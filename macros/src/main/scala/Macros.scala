@@ -26,8 +26,14 @@ def loadPropertiesImpl(c:Context)(file:c.Expr[String])={
   fis.close
   
   val map = properties.asScala
+
   
-  //c.Expr[Map[String,String]]
-  reify(Map.empty[String,String])
+  
+  val adds = map.map{case(k,v)=>(Literal(Constant(k)),Literal(Constant(v)))}
+				
+  
+  //c.Expr[Map[String,String]](Block())
+  //reify(Map.empty[String,String])
+  reify{val map=Map.newBuilder[String,String];map+=(("x","y"));map.result}
 }
 }
