@@ -30,10 +30,17 @@ def loadPropertiesImpl(c:Context)(file:c.Expr[String])={
   
   val pairs = map.map{case(k,v)=>reify((k,v))}
 
+  reify(println(Ident(mapVariable).splice))
+  
   val mapVariable= newTermName("map")
+  val mapVariableAsExpr =Expr[mutable.Builder[(String,String),Map[String,String]]](Ident(mapVariable))
   
   val typeTag = typeOf[mutable.Builder[(String,String),Map[String,String]]]
   val define = ValDef(Modifiers(), mapVariable,TypeTree(typeTag) , reify(Map.newBuilder[String,String]).tree)
+  
+  
+  
+  val result = reify()
   
   reify(Map.empty[String,String])
 }
