@@ -25,15 +25,8 @@ def loadPropertiesImpl(c: Context)(file: c.Expr[String])={
   properties.load(fis)
   fis.close
   
-  val propertiesMap = properties.asScala
-  
-  val adds = propertiesMap.map{case(k,v)=>q"map += (($k,$v))"}.toList
-
-  q"""
-	val map = Map.newBuilder[String,String]
-	$adds
-	map.result
-  """
+  val propertiesMap = properties.asScala.toMap
+  q"$propertiesMap"
 }
 
 def divC(a:Int,d:Int):Int= macro divByConstImpl
@@ -52,7 +45,7 @@ def divByConstImpl(c: Context)(a: c.Expr[Int],d:c.Expr[Int])={
 		case x => q"$a >> $x"
 	}.reduceLeft((left,right)=>q"$left+$right")
 	
-	println(result)
+	//println(result)
 	
 	result
 	/*q"""
