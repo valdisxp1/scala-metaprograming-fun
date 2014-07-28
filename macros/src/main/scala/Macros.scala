@@ -28,14 +28,12 @@ def loadPropertiesImpl(c: Context)(file: c.Expr[String])={
   
   val propertiesMap = properties.asScala
   
-  val defineBuilder = q"val map=Map.newBuilder[String,String]"
   val adds = propertiesMap.map{case(k,v)=>q"map += (($k,$v))"}.toList
-  val result = q"map.result"
 
   q"""
-	$defineBuilder
+	val map=Map.newBuilder[String,String]
 	$adds
-	$result
+	map.result
   """
 }
 }
