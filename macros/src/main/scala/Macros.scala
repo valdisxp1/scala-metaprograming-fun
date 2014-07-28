@@ -31,9 +31,11 @@ def loadPropertiesImpl(c: Context)(file: c.Expr[String])={
   val defineBuilder = q"val map=Map.newBuilder[String,String]"
   val adds = propertiesMap.map{case(k,v)=>q"map += (($k,$v))"}.toList
   val result = q"map.result"
-  
-  c.Expr[Map[String,String]](Block(
-  defineBuilder :: adds, result
-  ))
+
+  q"""
+	$defineBuilder
+	$adds
+	$result
+  """
 }
 }
