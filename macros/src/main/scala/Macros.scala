@@ -19,7 +19,9 @@ def loadProperties(file: String): Map[String,String] = macro loadPropertiesImpl
 def loadPropertiesImpl(c: Context)(file: c.Expr[String])={
   import c.universe._
   import scala.collection.JavaConverters._
-  val Literal(Constant(fileName: String)) = file.tree
+  
+  val q"${fileName: String}" = file.tree
+  
   val fis = new FileInputStream(fileName)
   val properties = new Properties
   properties.load(fis)
