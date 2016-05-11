@@ -4,8 +4,9 @@ import java.util.Properties
 import java.io.FileInputStream
 
 object LoadProperties {
-  def loadProperties(file: String): Map[String,String] = macro loadPropertiesImpl
-  def loadPropertiesImpl(c: Context)(file: c.Expr[String])={
+  def loadProperties(file: String): Map[String, String] = macro loadPropertiesImpl
+
+  def loadPropertiesImpl(c: Context)(file: c.Expr[String]) = {
     import c.universe._
     import scala.collection.JavaConverters._
 
