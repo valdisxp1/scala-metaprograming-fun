@@ -20,13 +20,23 @@ object Main extends App {
 
   // validate URLs
   // all the parsing errors will appear at compile time :-)
-  ValidWebsite.URL("http://example.com")
+  val url = ValidWebsite.URL("http://example.com")
+  println(s"host: ${url.getHost} port: ${url.getPort}")
+  // uncomment these lines to see it fail
+  //  ValidWebsite.URL("ftp://example.com")
+  //  ValidWebsite.URL("something...something")
 
+  // custom string interpolation
   {
     import ValidWebsite._
-    website"http://github.com"
+    website"https://github.com/valdisxp1/scala-metaprograming-fun"
+    // uncomment these lines to see it fail
+//    website"akka-tcp://192.168.0.11"
+//    website"file:///var/www/index.html"
+//    website"cow says moo"
+
+//    val host = "aaa.com"
+//    val port = 8080
+//    website"http://$host:$port/ping"
   }
-  // uncomment these lines to see it fail
-//  ValidWebsite.URL("ftp://example.com")
-//  ValidWebsite.URL("something...something")
 }
