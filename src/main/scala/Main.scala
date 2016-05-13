@@ -21,6 +21,11 @@ object Main extends App {
   // validate URLs
   // all the parsing errors will appear at compile time :-)
   ValidWebsite.URL("http://example.com")
+
+  {
+    import ValidWebsite._
+    website"http://github.com"
+  }
   // uncomment these lines to see it fail
 //  ValidWebsite.URL("ftp://example.com")
 //  ValidWebsite.URL("something...something")

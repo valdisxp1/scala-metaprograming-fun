@@ -29,14 +29,17 @@ object ValidWebsite {
 
   def validWebsiteImpl2(c: Context)(args: c.Expr[Any]*) = {
     import c.universe._
-    val urlValue = c.prefix.tree match {
+
+    // parts from StringContext.parts
+    val parts = c.prefix.tree match {
       case Apply(_, List(Apply(_, partTrees))) =>
-        val parts = partTrees map { case q"${const: String}" => const }
-        parts match {
-          case List(url) if args.isEmpty => url
-          case _ => c.abort(c.enclosingPosition,"Only a single string value is supported")
-        }
+        partTrees map { case q"${const: String}" => const }
       case _ =>  c.abort(c.enclosingPosition, "invalid")
+    }
+
+    val urlValue = parts match {
+      case List(url) if args.isEmpty => url
+      case _ => c.abort(c.enclosingPosition,"Only a single string value is supported")
     }
 
     try {
