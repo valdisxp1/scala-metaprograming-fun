@@ -4,7 +4,7 @@ import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros
 
 object ValidWebsite {
-  def validWebsite(url: String): URL = macro validWebsiteImpl
+  def URL(url: String): URL = macro validWebsiteImpl
 
   def validWebsiteImpl(c: Context)(url: c.Expr[String]) = {
     import c.universe._
