@@ -17,4 +17,10 @@ object Main extends App {
   val x = 20
   println(s"$x*3=${MultiplyByConst.multC(x, 3)}=${x*3}")
   println(s"49*12=${MultiplyByConst.multC(49, 12)}=${49*12}")
+
+  // validate URLS
+  ValidWebsite.validWebsite("http://example.com")
+  // uncomment these lines to see it fail
+  // ValidWebsite.validWebsite("ftp://example.com")
+  // ValidWebsite.validWebsite("something...something")
 }
