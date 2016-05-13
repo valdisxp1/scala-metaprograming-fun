@@ -12,8 +12,9 @@ object Main extends App {
   val properties2 = LoadProperties loadPropertiesWithoutQ "some.properties"
   println(s"Loaded properties $properties2")
 
-  // divide by a constant by only using bitshifts and adds
-  println(s"20/3=${Macro.divC(20, 3)}")
+  // multiply by a constant by only using bitshifts and adds
+  println(s"20*3=${MultiplyByConst.multC(20, 3)}=${20*3}")
   val x = 20
-  println(s"20/3=${Macro.divC(x, 3)}")
+  println(s"$x*3=${MultiplyByConst.multC(x, 3)}=${x*3}")
+  println(s"49*12=${MultiplyByConst.multC(49, 12)}=${49*12}")
 }
