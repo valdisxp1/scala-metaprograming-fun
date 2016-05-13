@@ -1,7 +1,5 @@
 import scala.reflect.macros.blackbox.Context
 import scala.language.experimental.macros
-import java.util.Properties
-import java.io.FileInputStream
 
 object MultiplyByConst{
 
