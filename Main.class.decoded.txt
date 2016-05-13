@@ -1,0 +1,862 @@
+Classfile /home/valdis/scala-metaprograming-fun/target/scala-2.11/classes/Main$.class
+  Last modified May 13, 2016; size 6862 bytes
+  MD5 checksum 930e095bf21d7b95dc0ef4fef3b9667f
+  Compiled from "Main.scala"
+public final class Main$ implements scala.App
+  minor version: 0
+  major version: 50
+  flags: ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+Constant pool:
+    #1 = Utf8               Main$
+    #2 = Class              #1            // Main$
+    #3 = Utf8               java/lang/Object
+    #4 = Class              #3            // java/lang/Object
+    #5 = Utf8               scala/App
+    #6 = Class              #5            // scala/App
+    #7 = Utf8               Main.scala
+    #8 = Utf8               MODULE$
+    #9 = Utf8               LMain$;
+   #10 = Utf8               <clinit>
+   #11 = Utf8               ()V
+   #12 = Utf8               <init>
+   #13 = NameAndType        #12:#11       // "<init>":()V
+   #14 = Methodref          #2.#13        // Main$."<init>":()V
+   #15 = Utf8               file
+   #16 = Utf8               Ljava/lang/String;
+   #17 = Utf8               properties
+   #18 = Utf8               Lscala/collection/immutable/Map;
+   #19 = Utf8               Lscala/collection/immutable/Map<Ljava/lang/String;Ljava/lang/String;>;
+   #20 = Utf8               properties2
+   #21 = Utf8               x
+   #22 = Utf8               I
+   #23 = Utf8               url
+   #24 = Utf8               Ljava/net/URL;
+   #25 = Utf8               executionStart
+   #26 = Utf8               J
+   #27 = Utf8               scala$App$$_args
+   #28 = Utf8               [Ljava/lang/String;
+   #29 = Utf8               scala$App$$initCode
+   #30 = Utf8               Lscala/collection/mutable/ListBuffer;
+   #31 = Utf8               Lscala/collection/mutable/ListBuffer<Lscala/Function0<Lscala/runtime/BoxedUnit;>;>;
+   #32 = Utf8               ()J
+   #33 = NameAndType        #25:#26       // executionStart:J
+   #34 = Fieldref           #2.#33        // Main$.executionStart:J
+   #35 = Utf8               this
+   #36 = Utf8               ()[Ljava/lang/String;
+   #37 = NameAndType        #27:#28       // scala$App$$_args:[Ljava/lang/String;
+   #38 = Fieldref           #2.#37        // Main$.scala$App$$_args:[Ljava/lang/String;
+   #39 = Utf8               scala$App$$_args_$eq
+   #40 = Utf8               ([Ljava/lang/String;)V
+   #41 = Utf8               x$1
+   #42 = Utf8               ()Lscala/collection/mutable/ListBuffer;
+   #43 = NameAndType        #29:#30       // scala$App$$initCode:Lscala/collection/mutable/ListBuffer;
+   #44 = Fieldref           #2.#43        // Main$.scala$App$$initCode:Lscala/collection/mutable/ListBuffer;
+   #45 = Utf8               scala$App$_setter_$executionStart_$eq
+   #46 = Utf8               (J)V
+   #47 = Utf8               scala$App$_setter_$scala$App$$initCode_$eq
+   #48 = Utf8               (Lscala/collection/mutable/ListBuffer;)V
+   #49 = Utf8               args
+   #50 = Utf8               scala/App$class
+   #51 = Class              #50           // scala/App$class
+   #52 = Utf8               (Lscala/App;)[Ljava/lang/String;
+   #53 = NameAndType        #49:#52       // args:(Lscala/App;)[Ljava/lang/String;
+   #54 = Methodref          #51.#53       // scala/App$class.args:(Lscala/App;)[Ljava/lang/String;
+   #55 = Utf8               delayedInit
+   #56 = Utf8               (Lscala/Function0;)V
+   #57 = Utf8               (Lscala/App;Lscala/Function0;)V
+   #58 = NameAndType        #55:#57       // delayedInit:(Lscala/App;Lscala/Function0;)V
+   #59 = Methodref          #51.#58       // scala/App$class.delayedInit:(Lscala/App;Lscala/Function0;)V
+   #60 = Utf8               body
+   #61 = Utf8               Lscala/Function0;
+   #62 = Utf8               main
+   #63 = Utf8               (Lscala/App;[Ljava/lang/String;)V
+   #64 = NameAndType        #62:#63       // main:(Lscala/App;[Ljava/lang/String;)V
+   #65 = Methodref          #51.#64       // scala/App$class.main:(Lscala/App;[Ljava/lang/String;)V
+   #66 = Utf8               ()Ljava/lang/String;
+   #67 = NameAndType        #15:#16       // file:Ljava/lang/String;
+   #68 = Fieldref           #2.#67        // Main$.file:Ljava/lang/String;
+   #69 = Utf8               ()Lscala/collection/immutable/Map;
+   #70 = NameAndType        #17:#18       // properties:Lscala/collection/immutable/Map;
+   #71 = Fieldref           #2.#70        // Main$.properties:Lscala/collection/immutable/Map;
+   #72 = NameAndType        #20:#18       // properties2:Lscala/collection/immutable/Map;
+   #73 = Fieldref           #2.#72        // Main$.properties2:Lscala/collection/immutable/Map;
+   #74 = Utf8               ()I
+   #75 = NameAndType        #21:#22       // x:I
+   #76 = Fieldref           #2.#75        // Main$.x:I
+   #77 = Utf8               ()Ljava/net/URL;
+   #78 = NameAndType        #23:#24       // url:Ljava/net/URL;
+   #79 = Fieldref           #2.#78        // Main$.url:Ljava/net/URL;
+   #80 = Utf8               delayedEndpoint$Main$1
+   #81 = Utf8               object Main extends App {\r\n  // use a macro to copy contents of a text file as a constant in the code\r\n  val file = LoadTextFile loadFile \"src/main/scala/Main.scala\"\r\n  println(s\"Source for this file is stored in the compiled code: \n$file\n---\")\r\n\r\n  // load properties into a map constant\r\n  // the properties file is then no longer needed\r\n  // using quasiquotes\r\n  val properties = LoadProperties loadProperties \"some.properties\"\r\n  println(s\"Loaded properties $properties\")\r\n  // without quasiquotes\r\n  val properties2 = LoadProperties loadPropertiesWithoutQ \"some.properties\"\r\n  println(s\"Loaded properties $properties2\")\r\n\r\n  // multiply by a constant by only using bitshifts and adds\r\n  println(s\"20*3=${MultiplyByConst.multC(20, 3)}=${20*3}\")\r\n  val x = 20\r\n  println(s\"$x*3=${MultiplyByConst.multC(x, 3)}=${x*3}\")\r\n  println(s\"49*12=${MultiplyByConst.multC(49, 12)}=${49*12}\")\r\n\r\n  // validate URLs\r\n  // all the parsing errors will appear at compile time :-)\r\n  val url = ValidWebsite.URL(\"http://example.com\")\r\n  println(s\"host: ${url.getHost} port: ${url.getPort}\")\r\n  // uncomment these lines to see it fail\r\n  //  ValidWebsite.URL(\"ftp://example.com\")\r\n  //  ValidWebsite.URL(\"something...something\")\r\n\r\n  // custom string interpolation\r\n  {\r\n    import ValidWebsite._\r\n    website\"https://github.com/valdisxp1/scala-metaprograming-fun\"\r\n    // uncomment these lines to see it fail\r\n//    website\"akka-tcp://192.168.0.11\"\r\n//    website\"file:///var/www/index.html\"\r\n//    website\"cow says moo\"\r\n\r\n//    val host = \"aaa.com\"\r\n//    val port = 8080\r\n//    website\"http://$host:$port/ping\"\r\n  }\r\n}
+   #82 = String             #81           // object Main extends App {\r\n  // use a macro to copy contents of a text file as a constant in the code\r\n  val file = LoadTextFile loadFile \"src/main/scala/Main.scala\"\r\n  println(s\"Source for this file is stored in the compiled code: \n$file\n---\")\r\n\r\n  // load properties into a map constant\r\n  // the properties file is then no longer needed\r\n  // using quasiquotes\r\n  val properties = LoadProperties loadProperties \"some.properties\"\r\n  println(s\"Loaded properties $properties\")\r\n  // without quasiquotes\r\n  val properties2 = LoadProperties loadPropertiesWithoutQ \"some.properties\"\r\n  println(s\"Loaded properties $properties2\")\r\n\r\n  // multiply by a constant by only using bitshifts and adds\r\n  println(s\"20*3=${MultiplyByConst.multC(20, 3)}=${20*3}\")\r\n  val x = 20\r\n  println(s\"$x*3=${MultiplyByConst.multC(x, 3)}=${x*3}\")\r\n  println(s\"49*12=${MultiplyByConst.multC(49, 12)}=${49*12}\")\r\n\r\n  // validate URLs\r\n  // all the parsing errors will appear at compile time :-)\r\n  val url = ValidWebsite.URL(\"http://example.com\")\r\n  println(s\"host: ${url.getHost} port: ${url.getPort}\")\r\n  // uncomment these lines to see it fail\r\n  //  ValidWebsite.URL(\"ftp://example.com\")\r\n  //  ValidWebsite.URL(\"something...something\")\r\n\r\n  // custom string interpolation\r\n  {\r\n    import ValidWebsite._\r\n    website\"https://github.com/valdisxp1/scala-metaprograming-fun\"\r\n    // uncomment these lines to see it fail\r\n//    website\"akka-tcp://192.168.0.11\"\r\n//    website\"file:///var/www/index.html\"\r\n//    website\"cow says moo\"\r\n\r\n//    val host = \"aaa.com\"\r\n//    val port = 8080\r\n//    website\"http://$host:$port/ping\"\r\n  }\r\n}
+   #83 = Utf8               scala/Predef$
+   #84 = Class              #83           // scala/Predef$
+   #85 = Utf8               Lscala/Predef$;
+   #86 = NameAndType        #8:#85        // MODULE$:Lscala/Predef$;
+   #87 = Fieldref           #84.#86       // scala/Predef$.MODULE$:Lscala/Predef$;
+   #88 = Utf8               scala/StringContext
+   #89 = Class              #88           // scala/StringContext
+   #90 = Utf8               java/lang/String
+   #91 = Class              #90           // java/lang/String
+   #92 = Utf8               Source for this file is stored in the compiled code: \n
+   #93 = String             #92           // Source for this file is stored in the compiled code: \n
+   #94 = Utf8               \n---
+   #95 = String             #94           // \n---
+   #96 = Utf8               [Ljava/lang/Object;
+   #97 = Class              #96           // "[Ljava/lang/Object;"
+   #98 = Utf8               wrapRefArray
+   #99 = Utf8               ([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+  #100 = NameAndType        #98:#99       // wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+  #101 = Methodref          #84.#100      // scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+  #102 = Utf8               (Lscala/collection/Seq;)V
+  #103 = NameAndType        #12:#102      // "<init>":(Lscala/collection/Seq;)V
+  #104 = Methodref          #89.#103      // scala/StringContext."<init>":(Lscala/collection/Seq;)V
+  #105 = NameAndType        #15:#66       // file:()Ljava/lang/String;
+  #106 = Methodref          #2.#105       // Main$.file:()Ljava/lang/String;
+  #107 = Utf8               genericWrapArray
+  #108 = Utf8               (Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+  #109 = NameAndType        #107:#108     // genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+  #110 = Methodref          #84.#109      // scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+  #111 = Utf8               s
+  #112 = Utf8               (Lscala/collection/Seq;)Ljava/lang/String;
+  #113 = NameAndType        #111:#112     // s:(Lscala/collection/Seq;)Ljava/lang/String;
+  #114 = Methodref          #89.#113      // scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+  #115 = Utf8               println
+  #116 = Utf8               (Ljava/lang/Object;)V
+  #117 = NameAndType        #115:#116     // println:(Ljava/lang/Object;)V
+  #118 = Methodref          #84.#117      // scala/Predef$.println:(Ljava/lang/Object;)V
+  #119 = Utf8               scala/collection/immutable/Map$
+  #120 = Class              #119          // scala/collection/immutable/Map$
+  #121 = Utf8               Lscala/collection/immutable/Map$;
+  #122 = NameAndType        #8:#121       // MODULE$:Lscala/collection/immutable/Map$;
+  #123 = Fieldref           #120.#122     // scala/collection/immutable/Map$.MODULE$:Lscala/collection/immutable/Map$;
+  #124 = Utf8               scala/Tuple2
+  #125 = Class              #124          // scala/Tuple2
+  #126 = Utf8               A
+  #127 = String             #126          // A
+  #128 = Utf8               1
+  #129 = String             #128          // 1
+  #130 = Utf8               (Ljava/lang/Object;Ljava/lang/Object;)V
+  #131 = NameAndType        #12:#130      // "<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+  #132 = Methodref          #125.#131     // scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+  #133 = Utf8               D
+  #134 = String             #133          // D
+  #135 = Utf8               -1
+  #136 = String             #135          // -1
+  #137 = Utf8               C
+  #138 = String             #137          // C
+  #139 = Utf8               3
+  #140 = String             #139          // 3
+  #141 = Utf8               B
+  #142 = String             #141          // B
+  #143 = Utf8               2
+  #144 = String             #143          // 2
+  #145 = Utf8               apply
+  #146 = Utf8               (Lscala/collection/Seq;)Lscala/collection/GenMap;
+  #147 = NameAndType        #145:#146     // apply:(Lscala/collection/Seq;)Lscala/collection/GenMap;
+  #148 = Methodref          #120.#147     // scala/collection/immutable/Map$.apply:(Lscala/collection/Seq;)Lscala/collection/GenMap;
+  #149 = Utf8               scala/collection/immutable/Map
+  #150 = Class              #149          // scala/collection/immutable/Map
+  #151 = Utf8               Loaded properties
+  #152 = String             #151          // Loaded properties
+  #153 = Utf8
+  #154 = String             #153          //
+  #155 = NameAndType        #17:#69       // properties:()Lscala/collection/immutable/Map;
+  #156 = Methodref          #2.#155       // Main$.properties:()Lscala/collection/immutable/Map;
+  #157 = Utf8               Map
+  #158 = Utf8               ()Lscala/collection/immutable/Map$;
+  #159 = NameAndType        #157:#158     // Map:()Lscala/collection/immutable/Map$;
+  #160 = Methodref          #84.#159      // scala/Predef$.Map:()Lscala/collection/immutable/Map$;
+  #161 = Utf8               newBuilder
+  #162 = Utf8               ()Lscala/collection/mutable/Builder;
+  #163 = NameAndType        #161:#162     // newBuilder:()Lscala/collection/mutable/Builder;
+  #164 = Methodref          #120.#163     // scala/collection/immutable/Map$.newBuilder:()Lscala/collection/mutable/Builder;
+  #165 = Utf8               scala/collection/mutable/Builder
+  #166 = Class              #165          // scala/collection/mutable/Builder
+  #167 = Utf8               $plus$eq
+  #168 = Utf8               (Ljava/lang/Object;)Lscala/collection/mutable/Builder;
+  #169 = NameAndType        #167:#168     // $plus$eq:(Ljava/lang/Object;)Lscala/collection/mutable/Builder;
+  #170 = InterfaceMethodref #166.#169     // scala/collection/mutable/Builder.$plus$eq:(Ljava/lang/Object;)Lscala/collection/mutable/Builder;
+  #171 = Utf8               result
+  #172 = Utf8               ()Ljava/lang/Object;
+  #173 = NameAndType        #171:#172     // result:()Ljava/lang/Object;
+  #174 = InterfaceMethodref #166.#173     // scala/collection/mutable/Builder.result:()Ljava/lang/Object;
+  #175 = NameAndType        #20:#69       // properties2:()Lscala/collection/immutable/Map;
+  #176 = Methodref          #2.#175       // Main$.properties2:()Lscala/collection/immutable/Map;
+  #177 = Utf8               20*3=
+  #178 = String             #177          // 20*3=
+  #179 = Utf8               =
+  #180 = String             #179          // =
+  #181 = Utf8               scala/runtime/BoxesRunTime
+  #182 = Class              #181          // scala/runtime/BoxesRunTime
+  #183 = Utf8               boxToInteger
+  #184 = Utf8               (I)Ljava/lang/Integer;
+  #185 = NameAndType        #183:#184     // boxToInteger:(I)Ljava/lang/Integer;
+  #186 = Methodref          #182.#185     // scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+  #187 = Utf8               *3=
+  #188 = String             #187          // *3=
+  #189 = NameAndType        #21:#74       // x:()I
+  #190 = Methodref          #2.#189       // Main$.x:()I
+  #191 = Utf8               49*12=
+  #192 = String             #191          // 49*12=
+  #193 = Utf8               java/net/URL
+  #194 = Class              #193          // java/net/URL
+  #195 = Utf8               http://example.com
+  #196 = String             #195          // http://example.com
+  #197 = Utf8               (Ljava/lang/String;)V
+  #198 = NameAndType        #12:#197      // "<init>":(Ljava/lang/String;)V
+  #199 = Methodref          #194.#198     // java/net/URL."<init>":(Ljava/lang/String;)V
+  #200 = Utf8               host:
+  #201 = String             #200          // host:
+  #202 = Utf8                port:
+  #203 = String             #202          //  port:
+  #204 = NameAndType        #23:#77       // url:()Ljava/net/URL;
+  #205 = Methodref          #2.#204       // Main$.url:()Ljava/net/URL;
+  #206 = Utf8               getHost
+  #207 = NameAndType        #206:#66      // getHost:()Ljava/lang/String;
+  #208 = Methodref          #194.#207     // java/net/URL.getHost:()Ljava/lang/String;
+  #209 = Utf8               getPort
+  #210 = NameAndType        #209:#74      // getPort:()I
+  #211 = Methodref          #194.#210     // java/net/URL.getPort:()I
+  #212 = Utf8               https://github.com/valdisxp1/scala-metaprograming-fun
+  #213 = String             #212          // https://github.com/valdisxp1/scala-metaprograming-fun
+  #214 = Utf8               builder
+  #215 = Utf8               Lscala/collection/mutable/Builder;
+  #216 = Methodref          #4.#13        // java/lang/Object."<init>":()V
+  #217 = NameAndType        #8:#9         // MODULE$:LMain$;
+  #218 = Fieldref           #2.#217       // Main$.MODULE$:LMain$;
+  #219 = Utf8               $init$
+  #220 = Utf8               (Lscala/App;)V
+  #221 = NameAndType        #219:#220     // $init$:(Lscala/App;)V
+  #222 = Methodref          #51.#221      // scala/App$class.$init$:(Lscala/App;)V
+  #223 = Utf8               Main$delayedInit$body
+  #224 = Class              #223          // Main$delayedInit$body
+  #225 = Utf8               (LMain$;)V
+  #226 = NameAndType        #12:#225      // "<init>":(LMain$;)V
+  #227 = Methodref          #224.#226     // Main$delayedInit$body."<init>":(LMain$;)V
+  #228 = NameAndType        #55:#56       // delayedInit:(Lscala/Function0;)V
+  #229 = Methodref          #2.#228       // Main$.delayedInit:(Lscala/Function0;)V
+  #230 = Utf8               Main
+  #231 = Class              #230          // Main
+  #232 = Utf8               delayedInit$body
+  #233 = Utf8               Signature
+  #234 = Utf8               Code
+  #235 = Utf8               LocalVariableTable
+  #236 = Utf8               LineNumberTable
+  #237 = Utf8               ()Lscala/collection/mutable/ListBuffer<Lscala/Function0<Lscala/runtime/BoxedUnit;>;>;
+  #238 = Utf8               Deprecated
+  #239 = Utf8               (Lscala/Function0<Lscala/runtime/BoxedUnit;>;)V
+  #240 = Utf8               ()Lscala/collection/immutable/Map<Ljava/lang/String;Ljava/lang/String;>;
+  #241 = Utf8               SourceFile
+  #242 = Utf8               InnerClasses
+  #243 = Utf8               Scala
+{
+  public static final Main$ MODULE$;
+    descriptor: LMain$;
+    flags: ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+
+  public static {};
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: new           #2                  // class Main$
+         3: invokespecial #14                 // Method "<init>":()V
+         6: return
+
+  public long executionStart();
+    descriptor: ()J
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #34                 // Field executionStart:J
+         4: lreturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 1: 0
+
+  public java.lang.String[] scala$App$$_args();
+    descriptor: ()[Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #38                 // Field scala$App$$_args:[Ljava/lang/String;
+         4: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 1: 0
+
+  public void scala$App$$_args_$eq(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #38                 // Field scala$App$$_args:[Ljava/lang/String;
+         5: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   LMain$;
+            0       6     1   x$1   [Ljava/lang/String;
+      LineNumberTable:
+        line 1: 0
+
+  public scala.collection.mutable.ListBuffer<scala.Function0<scala.runtime.BoxedUnit>> scala$App$$initCode();
+    descriptor: ()Lscala/collection/mutable/ListBuffer;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #44                 // Field scala$App$$initCode:Lscala/collection/mutable/ListBuffer;
+         4: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 1: 0
+    Signature: #237                         // ()Lscala/collection/mutable/ListBuffer<Lscala/Function0<Lscala/runtime/BoxedUnit;>;>;
+
+  public void scala$App$_setter_$executionStart_$eq(long);
+    descriptor: (J)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=3, locals=3, args_size=2
+         0: aload_0
+         1: lload_1
+         2: putfield      #34                 // Field executionStart:J
+         5: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   LMain$;
+            0       6     1   x$1   J
+      LineNumberTable:
+        line 1: 0
+
+  public void scala$App$_setter_$scala$App$$initCode_$eq(scala.collection.mutable.ListBuffer);
+    descriptor: (Lscala/collection/mutable/ListBuffer;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #44                 // Field scala$App$$initCode:Lscala/collection/mutable/ListBuffer;
+         5: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   LMain$;
+            0       6     1   x$1   Lscala/collection/mutable/ListBuffer;
+      LineNumberTable:
+        line 1: 0
+
+  public java.lang.String[] args();
+    descriptor: ()[Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokestatic  #54                 // Method scala/App$class.args:(Lscala/App;)[Ljava/lang/String;
+         4: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 1: 0
+
+  public void delayedInit(scala.Function0<scala.runtime.BoxedUnit>);
+    descriptor: (Lscala/Function0;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokestatic  #59                 // Method scala/App$class.delayedInit:(Lscala/App;Lscala/Function0;)V
+         5: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   LMain$;
+            0       6     1  body   Lscala/Function0;
+      LineNumberTable:
+        line 1: 0
+    Deprecated: true
+    Signature: #239                         // (Lscala/Function0<Lscala/runtime/BoxedUnit;>;)V
+
+  public void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokestatic  #65                 // Method scala/App$class.main:(Lscala/App;[Ljava/lang/String;)V
+         5: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   LMain$;
+            0       6     1  args   [Ljava/lang/String;
+      LineNumberTable:
+        line 1: 0
+
+  public java.lang.String file();
+    descriptor: ()Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #68                 // Field file:Ljava/lang/String;
+         4: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 3: 0
+
+  public scala.collection.immutable.Map<java.lang.String, java.lang.String> properties();
+    descriptor: ()Lscala/collection/immutable/Map;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #71                 // Field properties:Lscala/collection/immutable/Map;
+         4: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 9: 0
+    Signature: #240                         // ()Lscala/collection/immutable/Map<Ljava/lang/String;Ljava/lang/String;>;
+
+  public scala.collection.immutable.Map<java.lang.String, java.lang.String> properties2();
+    descriptor: ()Lscala/collection/immutable/Map;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #73                 // Field properties2:Lscala/collection/immutable/Map;
+         4: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 12: 0
+    Signature: #240                         // ()Lscala/collection/immutable/Map<Ljava/lang/String;Ljava/lang/String;>;
+
+  public int x();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #76                 // Field x:I
+         4: ireturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 17: 0
+
+  public java.net.URL url();
+    descriptor: ()Ljava/net/URL;
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #79                 // Field url:Ljava/net/URL;
+         4: areturn
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LMain$;
+      LineNumberTable:
+        line 23: 0
+
+  public final void delayedEndpoint$Main$1();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_FINAL
+    Code:
+      stack=10, locals=2, args_size=1
+         0: aload_0
+         1: ldc           #82                 // String object Main extends App {\r\n  // use a macro to copy contents of a text file as a constant in the code\r\n  val file = LoadTextFile loadFile \"src/main/scala/Main.scala\"\r\n  println(s\"Source for this file is stored in the compiled code: \n$file\n---\")\r\n\r\n  // load properties into a map constant\r\n  // the properties file is then no longer needed\r\n  // using quasiquotes\r\n  val properties = LoadProperties loadProperties \"some.properties\"\r\n  println(s\"Loaded properties $properties\")\r\n  // without quasiquotes\r\n  val properties2 = LoadProperties loadPropertiesWithoutQ \"some.properties\"\r\n  println(s\"Loaded properties $properties2\")\r\n\r\n  // multiply by a constant by only using bitshifts and adds\r\n  println(s\"20*3=${MultiplyByConst.multC(20, 3)}=${20*3}\")\r\n  val x = 20\r\n  println(s\"$x*3=${MultiplyByConst.multC(x, 3)}=${x*3}\")\r\n  println(s\"49*12=${MultiplyByConst.multC(49, 12)}=${49*12}\")\r\n\r\n  // validate URLs\r\n  // all the parsing errors will appear at compile time :-)\r\n  val url = ValidWebsite.URL(\"http://example.com\")\r\n  println(s\"host: ${url.getHost} port: ${url.getPort}\")\r\n  // uncomment these lines to see it fail\r\n  //  ValidWebsite.URL(\"ftp://example.com\")\r\n  //  ValidWebsite.URL(\"something...something\")\r\n\r\n  // custom string interpolation\r\n  {\r\n    import ValidWebsite._\r\n    website\"https://github.com/valdisxp1/scala-metaprograming-fun\"\r\n    // uncomment these lines to see it fail\r\n//    website\"akka-tcp://192.168.0.11\"\r\n//    website\"file:///var/www/index.html\"\r\n//    website\"cow says moo\"\r\n\r\n//    val host = \"aaa.com\"\r\n//    val port = 8080\r\n//    website\"http://$host:$port/ping\"\r\n  }\r\n}
+         3: putfield      #68                 // Field file:Ljava/lang/String;
+         6: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+         9: new           #89                 // class scala/StringContext
+        12: dup
+        13: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+        16: iconst_2
+        17: anewarray     #91                 // class java/lang/String
+        20: dup
+        21: iconst_0
+        22: ldc           #93                 // String Source for this file is stored in the compiled code: \n
+        24: aastore
+        25: dup
+        26: iconst_1
+        27: ldc           #95                 // String \n---
+        29: aastore
+        30: checkcast     #97                 // class "[Ljava/lang/Object;"
+        33: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+        36: invokespecial #104                // Method scala/StringContext."<init>":(Lscala/collection/Seq;)V
+        39: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+        42: iconst_1
+        43: anewarray     #4                  // class java/lang/Object
+        46: dup
+        47: iconst_0
+        48: aload_0
+        49: invokevirtual #106                // Method file:()Ljava/lang/String;
+        52: aastore
+        53: invokevirtual #110                // Method scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+        56: invokevirtual #114                // Method scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+        59: invokevirtual #118                // Method scala/Predef$.println:(Ljava/lang/Object;)V
+        62: aload_0
+        63: getstatic     #123                // Field scala/collection/immutable/Map$.MODULE$:Lscala/collection/immutable/Map$;
+        66: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+        69: iconst_4
+        70: anewarray     #125                // class scala/Tuple2
+        73: dup
+        74: iconst_0
+        75: new           #125                // class scala/Tuple2
+        78: dup
+        79: ldc           #127                // String A
+        81: ldc           #129                // String 1
+        83: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+        86: aastore
+        87: dup
+        88: iconst_1
+        89: new           #125                // class scala/Tuple2
+        92: dup
+        93: ldc           #134                // String D
+        95: ldc           #136                // String -1
+        97: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+       100: aastore
+       101: dup
+       102: iconst_2
+       103: new           #125                // class scala/Tuple2
+       106: dup
+       107: ldc           #138                // String C
+       109: ldc           #140                // String 3
+       111: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+       114: aastore
+       115: dup
+       116: iconst_3
+       117: new           #125                // class scala/Tuple2
+       120: dup
+       121: ldc           #142                // String B
+       123: ldc           #144                // String 2
+       125: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+       128: aastore
+       129: checkcast     #97                 // class "[Ljava/lang/Object;"
+       132: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       135: invokevirtual #148                // Method scala/collection/immutable/Map$.apply:(Lscala/collection/Seq;)Lscala/collection/GenMap;
+       138: checkcast     #150                // class scala/collection/immutable/Map
+       141: putfield      #71                 // Field properties:Lscala/collection/immutable/Map;
+       144: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       147: new           #89                 // class scala/StringContext
+       150: dup
+       151: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       154: iconst_2
+       155: anewarray     #91                 // class java/lang/String
+       158: dup
+       159: iconst_0
+       160: ldc           #152                // String Loaded properties
+       162: aastore
+       163: dup
+       164: iconst_1
+       165: ldc           #154                // String
+       167: aastore
+       168: checkcast     #97                 // class "[Ljava/lang/Object;"
+       171: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       174: invokespecial #104                // Method scala/StringContext."<init>":(Lscala/collection/Seq;)V
+       177: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       180: iconst_1
+       181: anewarray     #4                  // class java/lang/Object
+       184: dup
+       185: iconst_0
+       186: aload_0
+       187: invokevirtual #156                // Method properties:()Lscala/collection/immutable/Map;
+       190: aastore
+       191: invokevirtual #110                // Method scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       194: invokevirtual #114                // Method scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+       197: invokevirtual #118                // Method scala/Predef$.println:(Ljava/lang/Object;)V
+       200: aload_0
+       201: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       204: invokevirtual #160                // Method scala/Predef$.Map:()Lscala/collection/immutable/Map$;
+       207: invokevirtual #164                // Method scala/collection/immutable/Map$.newBuilder:()Lscala/collection/mutable/Builder;
+       210: astore_1
+       211: aload_1
+       212: new           #125                // class scala/Tuple2
+       215: dup
+       216: ldc           #127                // String A
+       218: ldc           #129                // String 1
+       220: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+       223: invokeinterface #170,  2          // InterfaceMethod scala/collection/mutable/Builder.$plus$eq:(Ljava/lang/Object;)Lscala/collection/mutable/Builder;
+       228: pop
+       229: aload_1
+       230: new           #125                // class scala/Tuple2
+       233: dup
+       234: ldc           #134                // String D
+       236: ldc           #136                // String -1
+       238: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+       241: invokeinterface #170,  2          // InterfaceMethod scala/collection/mutable/Builder.$plus$eq:(Ljava/lang/Object;)Lscala/collection/mutable/Builder;
+       246: pop
+       247: aload_1
+       248: new           #125                // class scala/Tuple2
+       251: dup
+       252: ldc           #138                // String C
+       254: ldc           #140                // String 3
+       256: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+       259: invokeinterface #170,  2          // InterfaceMethod scala/collection/mutable/Builder.$plus$eq:(Ljava/lang/Object;)Lscala/collection/mutable/Builder;
+       264: pop
+       265: aload_1
+       266: new           #125                // class scala/Tuple2
+       269: dup
+       270: ldc           #142                // String B
+       272: ldc           #144                // String 2
+       274: invokespecial #132                // Method scala/Tuple2."<init>":(Ljava/lang/Object;Ljava/lang/Object;)V
+       277: invokeinterface #170,  2          // InterfaceMethod scala/collection/mutable/Builder.$plus$eq:(Ljava/lang/Object;)Lscala/collection/mutable/Builder;
+       282: pop
+       283: aload_1
+       284: invokeinterface #174,  1          // InterfaceMethod scala/collection/mutable/Builder.result:()Ljava/lang/Object;
+       289: checkcast     #150                // class scala/collection/immutable/Map
+       292: putfield      #73                 // Field properties2:Lscala/collection/immutable/Map;
+       295: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       298: new           #89                 // class scala/StringContext
+       301: dup
+       302: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       305: iconst_2
+       306: anewarray     #91                 // class java/lang/String
+       309: dup
+       310: iconst_0
+       311: ldc           #152                // String Loaded properties
+       313: aastore
+       314: dup
+       315: iconst_1
+       316: ldc           #154                // String
+       318: aastore
+       319: checkcast     #97                 // class "[Ljava/lang/Object;"
+       322: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       325: invokespecial #104                // Method scala/StringContext."<init>":(Lscala/collection/Seq;)V
+       328: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       331: iconst_1
+       332: anewarray     #4                  // class java/lang/Object
+       335: dup
+       336: iconst_0
+       337: aload_0
+       338: invokevirtual #176                // Method properties2:()Lscala/collection/immutable/Map;
+       341: aastore
+       342: invokevirtual #110                // Method scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       345: invokevirtual #114                // Method scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+       348: invokevirtual #118                // Method scala/Predef$.println:(Ljava/lang/Object;)V
+       351: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       354: new           #89                 // class scala/StringContext
+       357: dup
+       358: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       361: iconst_3
+       362: anewarray     #91                 // class java/lang/String
+       365: dup
+       366: iconst_0
+       367: ldc           #178                // String 20*3=
+       369: aastore
+       370: dup
+       371: iconst_1
+       372: ldc           #180                // String =
+       374: aastore
+       375: dup
+       376: iconst_2
+       377: ldc           #154                // String
+       379: aastore
+       380: checkcast     #97                 // class "[Ljava/lang/Object;"
+       383: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       386: invokespecial #104                // Method scala/StringContext."<init>":(Lscala/collection/Seq;)V
+       389: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       392: iconst_2
+       393: anewarray     #4                  // class java/lang/Object
+       396: dup
+       397: iconst_0
+       398: bipush        60
+       400: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       403: aastore
+       404: dup
+       405: iconst_1
+       406: bipush        60
+       408: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       411: aastore
+       412: invokevirtual #110                // Method scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       415: invokevirtual #114                // Method scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+       418: invokevirtual #118                // Method scala/Predef$.println:(Ljava/lang/Object;)V
+       421: aload_0
+       422: bipush        20
+       424: putfield      #76                 // Field x:I
+       427: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       430: new           #89                 // class scala/StringContext
+       433: dup
+       434: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       437: iconst_4
+       438: anewarray     #91                 // class java/lang/String
+       441: dup
+       442: iconst_0
+       443: ldc           #154                // String
+       445: aastore
+       446: dup
+       447: iconst_1
+       448: ldc           #188                // String *3=
+       450: aastore
+       451: dup
+       452: iconst_2
+       453: ldc           #180                // String =
+       455: aastore
+       456: dup
+       457: iconst_3
+       458: ldc           #154                // String
+       460: aastore
+       461: checkcast     #97                 // class "[Ljava/lang/Object;"
+       464: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       467: invokespecial #104                // Method scala/StringContext."<init>":(Lscala/collection/Seq;)V
+       470: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       473: iconst_3
+       474: anewarray     #4                  // class java/lang/Object
+       477: dup
+       478: iconst_0
+       479: aload_0
+       480: invokevirtual #190                // Method x:()I
+       483: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       486: aastore
+       487: dup
+       488: iconst_1
+       489: aload_0
+       490: invokevirtual #190                // Method x:()I
+       493: aload_0
+       494: invokevirtual #190                // Method x:()I
+       497: iconst_1
+       498: ishl
+       499: iadd
+       500: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       503: aastore
+       504: dup
+       505: iconst_2
+       506: aload_0
+       507: invokevirtual #190                // Method x:()I
+       510: iconst_3
+       511: imul
+       512: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       515: aastore
+       516: invokevirtual #110                // Method scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       519: invokevirtual #114                // Method scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+       522: invokevirtual #118                // Method scala/Predef$.println:(Ljava/lang/Object;)V
+       525: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       528: new           #89                 // class scala/StringContext
+       531: dup
+       532: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       535: iconst_3
+       536: anewarray     #91                 // class java/lang/String
+       539: dup
+       540: iconst_0
+       541: ldc           #192                // String 49*12=
+       543: aastore
+       544: dup
+       545: iconst_1
+       546: ldc           #180                // String =
+       548: aastore
+       549: dup
+       550: iconst_2
+       551: ldc           #154                // String
+       553: aastore
+       554: checkcast     #97                 // class "[Ljava/lang/Object;"
+       557: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       560: invokespecial #104                // Method scala/StringContext."<init>":(Lscala/collection/Seq;)V
+       563: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       566: iconst_2
+       567: anewarray     #4                  // class java/lang/Object
+       570: dup
+       571: iconst_0
+       572: sipush        588
+       575: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       578: aastore
+       579: dup
+       580: iconst_1
+       581: sipush        588
+       584: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       587: aastore
+       588: invokevirtual #110                // Method scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       591: invokevirtual #114                // Method scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+       594: invokevirtual #118                // Method scala/Predef$.println:(Ljava/lang/Object;)V
+       597: aload_0
+       598: new           #194                // class java/net/URL
+       601: dup
+       602: ldc           #196                // String http://example.com
+       604: invokespecial #199                // Method java/net/URL."<init>":(Ljava/lang/String;)V
+       607: putfield      #79                 // Field url:Ljava/net/URL;
+       610: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       613: new           #89                 // class scala/StringContext
+       616: dup
+       617: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       620: iconst_3
+       621: anewarray     #91                 // class java/lang/String
+       624: dup
+       625: iconst_0
+       626: ldc           #201                // String host:
+       628: aastore
+       629: dup
+       630: iconst_1
+       631: ldc           #203                // String  port:
+       633: aastore
+       634: dup
+       635: iconst_2
+       636: ldc           #154                // String
+       638: aastore
+       639: checkcast     #97                 // class "[Ljava/lang/Object;"
+       642: invokevirtual #101                // Method scala/Predef$.wrapRefArray:([Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       645: invokespecial #104                // Method scala/StringContext."<init>":(Lscala/collection/Seq;)V
+       648: getstatic     #87                 // Field scala/Predef$.MODULE$:Lscala/Predef$;
+       651: iconst_2
+       652: anewarray     #4                  // class java/lang/Object
+       655: dup
+       656: iconst_0
+       657: aload_0
+       658: invokevirtual #205                // Method url:()Ljava/net/URL;
+       661: invokevirtual #208                // Method java/net/URL.getHost:()Ljava/lang/String;
+       664: aastore
+       665: dup
+       666: iconst_1
+       667: aload_0
+       668: invokevirtual #205                // Method url:()Ljava/net/URL;
+       671: invokevirtual #211                // Method java/net/URL.getPort:()I
+       674: invokestatic  #186                // Method scala/runtime/BoxesRunTime.boxToInteger:(I)Ljava/lang/Integer;
+       677: aastore
+       678: invokevirtual #110                // Method scala/Predef$.genericWrapArray:(Ljava/lang/Object;)Lscala/collection/mutable/WrappedArray;
+       681: invokevirtual #114                // Method scala/StringContext.s:(Lscala/collection/Seq;)Ljava/lang/String;
+       684: invokevirtual #118                // Method scala/Predef$.println:(Ljava/lang/Object;)V
+       687: new           #194                // class java/net/URL
+       690: dup
+       691: ldc           #213                // String https://github.com/valdisxp1/scala-metaprograming-fun
+       693: invokespecial #199                // Method java/net/URL."<init>":(Ljava/lang/String;)V
+       696: pop
+       697: return
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0     698     0  this   LMain$;
+          211      81     1 builder   Lscala/collection/mutable/Builder;
+      LineNumberTable:
+        line 3: 0
+        line 4: 6
+        line 9: 62
+        line 10: 144
+        line 12: 200
+        line 13: 295
+        line 16: 351
+        line 17: 421
+        line 18: 427
+        line 19: 525
+        line 23: 597
+        line 24: 610
+        line 32: 687
+}
+SourceFile: "Main.scala"
+InnerClasses:
+     public static final #232= #224 of #231; //delayedInit$body=class Main$delayedInit$body of class Main
+Error: unknown attribute
+  Scala: length = 0x0
+
