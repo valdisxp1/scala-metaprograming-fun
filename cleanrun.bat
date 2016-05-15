@@ -1,2 +1,1 @@
-sbt clean run
-pause
+sbt clean run & pause
